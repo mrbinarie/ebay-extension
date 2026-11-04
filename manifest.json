@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+
+    "name": "eBay GEL",
+    "description": "USD to GEL realtime converter extension",
+    "version": "1.0",
+    "icons": {
+        "16": "icons/favicon-16x16.png",
+        "48": "icons/favicon-48x48.png",
+        "128": "icons/favicon-128x128.png"
+    },
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": {
+            "16": "icons/favicon-16x16.png",
+            "32": "icons/favicon-32x32.png",
+            "48": "icons/favicon-48x48.png",
+            "128": "icons/favicon-128x128.png"
+        }
+    },
+
+    "permissions": ["tabs","storage"],
+    "host_permissions": ["https://api.businessonline.ge/*"],
+    
+    "content_scripts": [{
+        "js": ["scripts/lib/jquery-1.8.2.min.js", "scripts/app.module.js"],
+        "matches": ["https://*.ebay.com/*"]
+    }]
+}
